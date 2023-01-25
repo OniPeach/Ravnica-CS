@@ -1,4 +1,4 @@
-<div class="sheet-darkerdungeons">
+<div class="sheet-ravnica">
 	<input class="monster_confirm_flag" type="hidden" name="attr_monster_confirm_flag">
 	<div class="licensecontainer compendium-drop-target monsters">
 		<input class="sheet-toggle-npc" name="attr_npc" type="hidden" value="0">
@@ -938,6 +938,9 @@
 				<div class="sheet-section-pc-header-name">
 					<input type="text" name="attr_character_name" title="@{character_name}">
 				</div>
+				<div class="sheet-section-pc-header-renown">
+					<input type="text" name="attr_character_renown" title="@{character_renown}">
+				</div>
 				<div class="sheet-section-pc-header-details">
 					<div class="sheet-checkbox-cog">
 						<input type="checkbox" name="attr_options-class-selection"><span></span>
@@ -996,8 +999,8 @@
 								<input type="text" name="attr_race_display" title="@{race_display}">
 							</div>
 							<div>
-								<label>Alignment</label>
-								<input type="text" name="attr_alignment" title="@{alignment}">
+								<label>Guild</label>
+								<input type="text" name="attr_guild" title="@{guild}">
 							</div>
 						</div>
 					</div>
@@ -1670,19 +1673,19 @@
 										<input type="text" name="attr_speed" title="@{speed}">
 									</div>
 								</div>
-								<div class="sheet-container-bar sheet-pc-fate">
-									<div class="sheet-container-header">Fate</div>
+								<div class="sheet-container-bar sheet-pc-omens">
+									<div class="sheet-container-header">Omens</div>
 									<div class="sheet-container-body">
 										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_fate_1" title="@{fate_1}">
+											<input type="checkbox" name="attr_omen_1" title="@{omen_1}">
 											<span></span>
 										</div>
 										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_fate_2" title="@{fate_2}">
+											<input type="checkbox" name="attr_omen_2" title="@{omen_2}">
 											<span></span>
 										</div>
 										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_fate_3" title="@{fate_3}">
+											<input type="checkbox" name="attr_omen_3" title="@{omen_3}">
 											<span></span>
 										</div>
 									</div>
@@ -1836,7 +1839,7 @@
 										</div>
 									</div>
 									<div class="sheet-container-panel sheet-pc-wounds">
-										<div class="sheet-container-header">Wounds & Injuries</div>
+										<div class="sheet-container-header">Wounds & Illnesses</div>
 										<div class="sheet-container-body">
 											<div class="sheet-container-body-header">
 												<span></span>
@@ -1852,7 +1855,7 @@
 													<input type="checkbox" name="attr_options-flag" checked="checked" class="sheet-toggle" hidden>
 													<div class="sheet-toggle-checked">
 														<div class="sheet-form">
-															<div class="sheet-form-header">Edit Wound/Injury</div>
+															<div class="sheet-form-header">Edit Wound/Illness</div>
 															<div class="sheet-form-body">
 																<div class="sheet-form-group">
 																	<input type="text" name="attr_wound_description">
@@ -9337,11 +9340,11 @@
 							type = page.data["Type"].toLowerCase();
 						}
 					};
-					if (page.data["Alignment"]) {
+					if (page.data["Guild"]) {
 						if (type.length > 0) {
-							type = type + ", " + page.data["Alignment"];
+							type = type + ", " + page.data["Guild"];
 						} else {
-							type = page.data["Alignment"];
+							type = page.data["Guild"];
 						}
 					};
 					update["npc_type"] = type;
