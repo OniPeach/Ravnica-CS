@@ -12016,7 +12016,7 @@
 					var charclass = v.custom_class && v.custom_class != "0" ? v["cust_classname"] : v["class"];
 					var hitdie_final = multiclass ? "?{Hit Die Class|" + charclass + ",@{hitdietype}" : "@{hitdietype}";
 					var subclass = v.subclass ? v.subclass + " " : "";
-					var class_display = subclass + charclass + " " + finallevel;
+					var class_display = charclass + " " + finallevel;
 
 					// This nested array is used to determine the overall spellcasting level for the character.
 					var classes = [
@@ -12029,7 +12029,7 @@
 						hitdie_final = hitdie_final + "|" + v["multiclass1"].charAt(0).toUpperCase() + v["multiclass1"].slice(1) + "," + checkHitDie(v["multiclass1"]);
 						classes.push([v["multiclass1"], multiclasslevel]);
 						var subclass = v.multiclass1_subclass ? v.multiclass1_subclass + " " : "";
-						class_display = class_display + ", " + subclass + v.multiclass1 + " " + multiclasslevel;
+						class_display = class_display + ", " + v.multiclass1 + " " + multiclasslevel;
 					};
 					if (v.multiclass2_flag && v.multiclass2_flag === "1") {
 						var multiclasslevel = (v["multiclass2_lvl"] && v["multiclass2_lvl"] > 0) ? parseInt(v["multiclass2_lvl"], 10) : 1;
@@ -12037,7 +12037,7 @@
 						hitdie_final = hitdie_final + "|" + v["multiclass2"].charAt(0).toUpperCase() + v["multiclass2"].slice(1) + "," + checkHitDie(v["multiclass2"]);
 						classes.push([v["multiclass2"], multiclasslevel]);
 						var subclass = v.multiclass2_subclass ? v.multiclass2_subclass + " " : "";
-						class_display = class_display + ", " + subclass + v.multiclass2 + " " + multiclasslevel;
+						class_display = class_display + ", " + v.multiclass2 + " " + multiclasslevel;
 					};
 					if (v.multiclass3_flag && v.multiclass3_flag === "1") {
 						var multiclasslevel = (v["multiclass3_lvl"] && v["multiclass3_lvl"] > 0) ? parseInt(v["multiclass3_lvl"], 10) : 1;
@@ -12045,7 +12045,7 @@
 						hitdie_final = hitdie_final + "|" + v["multiclass3"].charAt(0).toUpperCase() + v["multiclass3"].slice(1) + "," + checkHitDie(v["multiclass3"]);
 						classes.push([v["multiclass3"], multiclasslevel]);
 						var subclass = v.multiclass3_subclass ? v.multiclass3_subclass + " " : "";
-						class_display = class_display + ", " + subclass + v.multiclass3 + " " + multiclasslevel;
+						class_display = class_display + ", " + v.multiclass3 + " " + multiclasslevel;
 					};
 
 					var casterlevel = checkCasterLevel(classes, v["arcane_fighter"], v["arcane_rogue"]);
