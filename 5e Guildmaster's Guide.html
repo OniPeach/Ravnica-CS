@@ -2154,9 +2154,7 @@
 									</div>
 								</div>
 								<div class="sheet-container-box sheet-pc-spell-dc">
-									<div class="sheet-container-header">
-										<button type="roll" name="roll_burnout" value="@{wtype}&{template:simple} {{rname=Saving Throw Attack}} {{mod=@{spell_save_dc}}} {{r1=[[@{d20}+[[@{spell_save_dc}]]]]}} {{normal=1}} @{charname_output}">Spell Save DC</button>
-									</div>
+									<div class="sheet-container-header">Spell Save DC</div>
 									<div class="sheet-container-body">
 										<span name="attr_spell_save_dc" title="@{spell_save_dc}"></span>
 									</div>
@@ -2169,7 +2167,7 @@
 								</div>
 								<div class="sheet-container-box sheet-pc-resource-class">
 									<div class="sheet-container-header">
-										<input type="text" name="attr_class_resource_name" title="@{class_resource_name}" class="sheet-input-overlay">
+										<input type="text" name="attr_class_resource_name" title="@{class_resource_name}" class="sheet-input-overlay" value="Class Resource">
 										<span name="attr_class_resource_name" title="@{class_resource_name}">Class Resource</span>
 									</div>
 									<div class="sheet-container-body">
@@ -2180,66 +2178,13 @@
 								</div>
 								<div class="sheet-container-box sheet-pc-resource-other">
 									<div class="sheet-container-header">
-										<input type="text" name="attr_other_resource_name" title="@{other_resource_name}" class="sheet-input-overlay">
+										<input type="text" name="attr_other_resource_name" title="@{other_resource_name}" class="sheet-input-overlay" value="Other Resource">
 										<span name="attr_other_resource_name">Other Resource</span>
 									</div>
 									<div class="sheet-container-body">
 										<input type="text" name="attr_other_resource" title="@{other_resource}">
 										<span>/</span>
 										<input type="text" name="attr_other_resource_max" title="@{other_resource_max}">
-									</div>
-								</div>
-								<div class="sheet-container-box sheet-pc-burnout">
-									<div class="sheet-container-header">
-										<button type="roll" name="roll_burnout" value="@{wtype}&{template:simple} {{rname=Spell Burnout}} {{mod=@{spell_burnout}}} {{r1=[[@{spell_burnout}]]}} {{normal=1}} @{charname_output}">Spell Burnout</button>
-									</div>
-									<div class="sheet-container-body">
-										<select name="attr_spell_burnout" title="@{spell_burnout}">
-											<option value=""></option>
-											<option value="d12">d12</option>
-											<option value="d10">d10</option>
-											<option value="d8">d8</option>
-											<option value="d6">d6</option>
-											<option value="d4">d4</option>
-										</select>
-									</div>
-								</div>
-								<div class="sheet-container-panel sheet-pc-resources">
-									<div class="sheet-container-header">Other Resources</div>
-									<div class="sheet-container-body">
-										<fieldset class="repeating_resource">
-											<div class="sheet-fieldset-item sheet-fieldset-item-resource">
-												<div class="sheet-checkbox-cog">
-													<input type="checkbox" name="attr_options-flag" checked="checked"><span></span>
-													<span class="sheet-toggle-icon"></span>
-												</div>
-												<input type="checkbox" name="attr_options-flag" checked="checked" hidden class="sheet-toggle">
-												<div class="sheet-toggle-checked">
-													<div class="sheet-form">
-														<div class="sheet-form-header">Edit Resource</div>
-														<div class="sheet-form-body">
-															<div class="sheet-form-group">
-																<label>Name:</label>
-																<input type="text" name="attr_resourcename">
-															</div>
-															<div class="sheet-form-group">
-																<label>Amount:</label>
-																<input type="text" name="attr_resourceamount">
-																<label>Max:</label>
-																<input type="text" name="attr_resourcemax">
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="sheet-toggle-unchecked">
-													<div class="sheet-pc-resource">
-														<span name="attr_resourcename"></span>
-														<span name="attr_resourceamount"></span>
-														<span name="attr_resourcemax"></span>
-													</div>
-												</div>
-											</div>
-										</fieldset>
 									</div>
 								</div>
 								<div class="sheet-container-panel sheet-pc-attacks">
@@ -2558,6 +2503,58 @@
 							</div>
 							<div class="sheet-container-effects">
 								<input type="hidden" name="attr_show_stress_flag" value="1" class="sheet-field-toggle">
+								<div class="sheet-container-well sheet-container-well-effects">
+									<input type="hidden" name="attr_show_exhaustion_flag" value="1" class="sheet-field-toggle">
+									<div class="sheet-container-panel sheet-pc-exhaustion-details">
+										<div class="sheet-container-header">Exhaustion Effects</div>
+										<div class="sheet-container-body">
+											<ul>
+												<li>
+													<label class="sheet-radio">
+														<input type="radio" name="attr_exhaustion_status" value="0" checked="true" title="@{exhaustion_status}">
+														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>0:</strong> None</span>
+													</label>
+												</li>
+												<li>
+													<label class="sheet-radio">
+														<input type="radio" name="attr_exhaustion_status" value="1" title="@{exhaustion_status}">
+														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>1:</strong> Disadvantage on Ability Checks</span>
+													</label>
+												</li>
+												<li>
+													<label class="sheet-radio">
+														<input type="radio" name="attr_exhaustion_status" value="2" title="@{exhaustion_status}">
+														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>2:</strong>Speed halved</span>
+													</label>
+												</li>
+												<li>
+													<label class="sheet-radio">
+														<input type="radio" name="attr_exhaustion_status" value="3" title="@{exhaustion_status}">
+														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>3:</strong>Disadvantage on Attacks and Saves</span>
+													</label>
+												</li>
+												<li>
+													<label class="sheet-radio">
+														<input type="radio" name="attr_exhaustion_status" value="4" title="@{exhaustion_status}">
+														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>4:</strong>Hit point maximum halved</span>
+													</label>
+												</li>
+												<li>
+													<label class="sheet-radio">
+														<input type="radio" name="attr_exhaustion_status" value="5" title="@{exhaustion_status}">
+														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>5:</strong>Speed reduced to 0</span>
+													</label>
+												</li>
+												<li>
+													<label class="sheet-radio">
+														<input type="radio" name="attr_exhaustion_status" value="6" title="@{exhaustion_status}">
+														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>6:</strong>Death</span>
+													</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
 								<div class="sheet-container-well sheet-container-well-stress">
 									<div class="sheet-container-box sheet-pc-stress">
 										<div class="sheet-container-header">Stress</div>
@@ -2643,101 +2640,6 @@
 													<div class="sheet-toggle-unchecked">
 														<div class="sheet-pc-affliction">
 															<span name="attr_affliction"></span>
-														</div>
-													</div>
-												</div>
-											</fieldset>
-										</div>
-									</div>
-								</div>
-								<div class="sheet-container-well sheet-container-well-effects">
-									<input type="hidden" name="attr_show_exhaustion_flag" value="1" class="sheet-field-toggle">
-									<div class="sheet-container-panel sheet-pc-exhaustion-details">
-										<div class="sheet-container-header">Exhaustion Effects</div>
-										<div class="sheet-container-body">
-											<ul>
-												<li>
-													<label class="sheet-radio">
-														<input type="radio" name="attr_exhaustion_status" value="0" checked="true" title="@{exhaustion_status}">
-														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>0:</strong> None</span>
-													</label>
-												</li>
-												<li>
-													<label class="sheet-radio">
-														<input type="radio" name="attr_exhaustion_status" value="1" title="@{exhaustion_status}">
-														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>1:</strong> Disadvantage on Ability Checks</span>
-													</label>
-												</li>
-												<li>
-													<label class="sheet-radio">
-														<input type="radio" name="attr_exhaustion_status" value="2" title="@{exhaustion_status}">
-														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>2:</strong>Speed halved</span>
-													</label>
-												</li>
-												<li>
-													<label class="sheet-radio">
-														<input type="radio" name="attr_exhaustion_status" value="3" title="@{exhaustion_status}">
-														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>3:</strong>Disadvantage on Attacks and Saves</span>
-													</label>
-												</li>
-												<li>
-													<label class="sheet-radio">
-														<input type="radio" name="attr_exhaustion_status" value="4" title="@{exhaustion_status}">
-														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>4:</strong>Hit point maximum halved</span>
-													</label>
-												</li>
-												<li>
-													<label class="sheet-radio">
-														<input type="radio" name="attr_exhaustion_status" value="5" title="@{exhaustion_status}">
-														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>5:</strong>Speed reduced to 0</span>
-													</label>
-												</li>
-												<li>
-													<label class="sheet-radio">
-														<input type="radio" name="attr_exhaustion_status" value="6" title="@{exhaustion_status}">
-														<span title="@{exhaustion_status}"><span class="sheet-pc-exhaustion-dot"></span><strong>6:</strong>Death</span>
-													</label>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<div class="sheet-container-panel sheet-pc-effects">
-										<div class="sheet-container-header">Effects & Conditions</div>
-										<div class="sheet-container-body">
-											<div class="sheet-container-body-header">
-												<span></span>
-												<span>Description</span>
-											</div>
-											<fieldset class="repeating_effects-conditions">
-												<div class="sheet-fieldset-item">
-													<div class="sheet-checkbox-cog">
-														<input type="checkbox" name="attr_options-flag" checked="checked"><span></span>
-														<span class="sheet-toggle-icon"></span>
-													</div>
-													<input type="checkbox" name="attr_options-flag" checked="checked" class="sheet-toggle" hidden>
-													<div class="sheet-toggle-checked">
-														<div class="sheet-form">
-															<div class="sheet-form-header">Edit Effect</div>
-															<div class="sheet-form-body">
-																<div class="sheet-form-group">
-																	<input type="text" name="attr_description">
-																</div>
-																<div class="sheet-form-group">
-																	<label class="sheet-form-checkbox">
-																		<input type="checkbox" name="attr_active" value="1" checked="checked">
-																		<span>Active</span>
-																	</label>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="sheet-toggle-unchecked">
-														<div class="sheet-pc-effect">
-															<div class="sheet-checkbox-image">
-																<input type="checkbox" name="attr_active" value="1" checked="checked">
-																<span></span>
-															</div>
-															<span name="attr_description"></span>
 														</div>
 													</div>
 												</div>
@@ -3579,9 +3481,7 @@
 									</div>
 								</div>
 								<div class="sheet-container-box sheet-pc-spell-dc">
-									<div class="sheet-container-header">
-										<button type="roll" name="roll_burnout" value="@{wtype}&{template:simple} {{rname=Saving Throw Attack}} {{mod=@{spell_save_dc}}} {{r1=[[@{d20}+[[@{spell_save_dc}]]]]}} {{normal=1}} @{charname_output}">Spell Save DC</button>
-									</div>
+									<div class="sheet-container-header">Spell Save DC</div>
 									<div class="sheet-container-body">
 										<span name="attr_spell_save_dc" title="@{spell_save_dc}"></span>
 									</div>
@@ -3612,21 +3512,6 @@
 										<input type="text" name="attr_other_resource" title="@{other_resource}">
 										<span>/</span>
 										<input type="text" name="attr_other_resource_max" title="@{other_resource_max}">
-									</div>
-								</div>
-								<div class="sheet-container-box sheet-pc-burnout">
-									<div class="sheet-container-header">
-										<button type="roll" name="roll_burnout" value="@{wtype}&{template:simple} {{rname=Spell Burnout}} {{mod=@{spell_burnout}}} {{r1=[[@{spell_burnout}]]}} {{normal=1}} @{charname_output}">Spell Burnout</button>
-									</div>
-									<div class="sheet-container-body">
-										<select name="attr_spell_burnout" title="@{spell_burnout}">
-											<option value=""></option>
-											<option value="d12">d12</option>
-											<option value="d10">d10</option>
-											<option value="d8">d8</option>
-											<option value="d6">d6</option>
-											<option value="d4">d4</option>
-										</select>
 									</div>
 								</div>
 								<div class="sheet-container-box sheet-pc-spell-symbols">
