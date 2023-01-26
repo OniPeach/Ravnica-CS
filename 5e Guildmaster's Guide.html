@@ -2614,18 +2614,17 @@
 															<div class="sheet-form-body">
 																<div class="sheet-form-group">
 																	<select name="attr_affliction">
-																		<option value="Acute: Advantage on INT checks/saves">Acute</option>
-																		<option value="Anxiety: Disadvantage on Stress checks">Anxiety</option>
-																		<option value="Courageous: Advantage on CHA checks/saves">Courageous</option>
-																		<option value="Fearful: Disadvantage on WIS checks/saves">Fearful</option>
-																		<option value="Focused: +2 to all attack rolls">Focused</option>
-																		<option value="Hopelessness: Disadvantage on STR checks/saves">Hopelessness</option>
-																		<option value="Hypochondria: Hit point maximum is halved">Hypochondria</option>
-																		<option value="Irrational: Disadvantage on INT checks/saves">Irrational</option>
-																		<option value="Lethargic: +1 exhaustion until removed">Lethargic</option>
-																		<option value="Mania: Disadvantage on attack rolls">Mania</option>
-																		<option value="Masochistic: Disadvantage on CON checks/saves">Masochistic</option>
-																		<option value="Narcissistic: Disadvantage on ability checks">Narcissistic</option>
+																		<option value="Nightmares: Unable to recover HP from rests">Nightmares (1)</option>
+																		<option value="Hypochondria: Disadvantage on CON checks; -1 AC">Hypochondria (1)</option>
+																		<option value="Paranoia: Disadvantage on CHA checks; -5 Speed">Paranoia (1)</option>
+																		<option value="Anxiety: Increase rate of exhaustion by x2">Anxiety (1)</option>
+																		<option value="Disoriented: Cannot take a move and standard action in one round; Cannot concentrate on spells">Disoriented (2)</option>
+																		<option value="Hopelessness: Disadvantage on STR rolls; -2 to Damage Rolls">Hopelessness (2)</option>
+																		<option value="Manic: Lose your Proficiency bonus to rolls">Manic (2)</option>
+																		<option value="Lethargic: Disadvantage on DEX; -4 to Attack Rolls">Lethargic (2)</option>
+																		<option value="Psychosis: 50% miss chance on spells and attacks; Disadvantage on WIS/INT rolls.">Pyschosis (3)</option>
+																		<option value="Neurosis: Abilities randomly target a creature; Disadvantage on WIS/INT rolls.">Neurosis (3)</option>
+																		<option value="Amnesia: Lose all bonuses to checks; Disadvantage on WIS/INT Rolls">Amnesia (3)</option>
 																		<option value="Panic: Disadvantage on DEX checks/saves">Panic</option>
 																		<option value="Paranoid: Speed is halved">Paranoid</option>
 																		<option value="Perceptive: Advantage on WIS checks/saves">Perceptive</option>
@@ -2658,6 +2657,15 @@
 								<div class="sheet-container-panel sheet-pc-details">
 									<div class="sheet-container-header">Character Details</div>
 									<div class="sheet-container-body">
+										<div class="sheet-pc-detail sheet-pc-detail-appearance">
+											<label>Appearance</label>
+											<div class="sheet-pc-detail-column">
+												<input type="text" name="attr_character_appearance_detail" title="@{character_appearance_detail}" placeholder="Hair">
+												<input type="text" name="attr_character_appearance_detail" title="@{character_appearance_detail}" placeholder="Skin">
+												<input type="text" name="attr_character_appearance_detail" title="@{character_appearance_detail}" placeholder="Eyes">
+												<input type="text" name="attr_character_appearance_detail" title="@{character_appearance_detail}" placeholder="Marks">
+											</div>
+										</div>
 										<div class="sheet-pc-detail">
 											<label>Age</label>
 											<select name="attr_character_age" title="@{character_age}">
@@ -2705,83 +2713,11 @@
 											</select>
 											<input type="text" name="attr_character_weight_detail" title="@{character_weight_detail}">
 										</div>
-										<div class="sheet-pc-detail sheet-pc-detail-feature">
-											<label>Feature</label>
+										<div class="sheet-pc-detail sheet-pc-detail-fears">
+											<label>Fears</label>
 											<div class="sheet-pc-detail-column">
-												<select name="attr_character_feature" title="@{character_feature}">
-													<option value=""></option>
-													<option value="scar">Scar</option>
-													<option value="tattoo">Tattoo</option>
-													<option value="Piercing">Piercing</option>
-													<option value="birthmark">Birthmark</option>
-													<option value="accent">Accent</option>
-												</select>
-												<input type="text" name="attr_character_feature_detail" title="@{character_feature_detail}">
-											</div>
-										</div>
-										<div class="sheet-pc-detail sheet-pc-detail-motivation">
-											<label>Motivation</label>
-											<div class="sheet-pc-detail-column">
-												<select name="attr_character_motivation" title="@{character_motivation}">
-													<option value=""></option>
-													<option value="achievement">To become the best</option>
-													<option value="acquisition">To obtain possessions or wealth</option>
-													<option value="balance">To bring all things into harmony</option>
-													<option value="beneficence">To protect, heal, and mend</option>
-													<option value="creation">To build or make new</option>
-													<option value="discovery">To explore, uncover, and pioneer</option>
-													<option value="education">To inform, teach, or train</option>
-													<option value="hedonism">To enjoy all things sensuous</option>
-													<option value="liberation">To free the self and/or others</option>
-													<option value="nobility">To be virtuous, honest, and brave</option>
-													<option value="order">To organize and reduce chaos</option>
-													<option value="play">To have fun, to enjoy life</option>
-													<option value="power">To control and lead others</option>
-													<option value="recognition">To gain approval, status, or fame</option>
-													<option value="service">To follow a person or group</option>
-													<option value="understanding">To seek knowledge or wisdom</option>
-												</select>
-												<input type="text" name="attr_character_motivation_detail" title="@{character_motivation_detail}">
-											</div>
-										</div>
-										<div class="sheet-pc-detail sheet-pc-detail-habit">
-											<label>Habit</label>
-											<div class="sheet-pc-detail-column">
-												<select name="attr_character_habit" title="@{character_habit}">
-													<option value=""></option>
-													<option value="humming">Humming</option>
-													<option value="dancing">Dancing</option>
-													<option value="sleepwalking">Sleepwalking</option>
-													<option value="fingernail">Fingernail biting</option>
-													<option value="daydreaming">Daydreaming</option>
-													<option value="talking">Talking in sleep</option>
-													<option value="whistling">Whistling</option>
-													<option value="name">Name dropping</option>
-													<option value="grooming">Constant grooming</option>
-													<option value="tapping">Foot tapping</option>
-													<option value="biting">Lip biting/licking</option>
-													<option value="coin">Coin flipping</option>
-													<option value="chewing">Chewing</option>
-													<option value="cracking">Knuckle cracking</option>
-													<option value="collects">Collects odd things</option>
-													<option value="singing">Singing</option>
-													<option value="snacking">Snacking</option>
-													<option value="pacing">Pacing</option>
-													<option value="counting">Counting</option>
-													<option value="snoring">Snoring</option>
-													<option value="beard">Beard/hair stroking</option>
-													<option value="nose_picking">Nose picking</option>
-													<option value="exaggeration">Exaggeration</option>
-													<option value="superstitious">Superstitious</option>
-													<option value="belching">Belching</option>
-													<option value="repeating">Repeating others</option>
-													<option value="smelling">Smelling things</option>
-													<option value="teeth">Teeth picking</option>
-													<option value="swearing">Swearing</option>
-													<option value="secrets">Telling secrets</option>
-													<option value="repeating_yourself">Repeating yourself</option>
-												</select>
-												<input type="text" name="attr_character_habit_detail" title="@{character_habit_detail}">
+												<input type="text" name="attr_character_fears_detail" title="@{character_fears_detail}">
+												<input type="text" name="attr_character_fears_detail" title="@{character_fears_detail}">
 											</div>
 										</div>
 										<div class="sheet-pc-detail">
@@ -2837,62 +2773,17 @@
 									</div>
 								</div>
 							</div>
-							<div class="sheet-container-well sheet-container-well-memories">
-								<div class="sheet-container-bar sheet-pc-xp">
-									<div class="sheet-container-header">Experience</div>
+							<div class="sheet-container-well sheet-container-well-history">
+								<div class="sheet-container-panel sheet-pc-backstory">
+									<div class="sheet-container-header">Backstory</div>
 									<div class="sheet-container-body">
-										<input type="text" name="attr_experience" title="@{experience}">
+										<textarea name="attr_backstory" title="@{personality_backstory}"></textarea>
 									</div>
 								</div>
-								<div class="sheet-container-bar sheet-pc-training">
-									<div class="sheet-container-header">Training</div>
+								<div class="sheet-container-panel sheet-pc-allies">
+									<div class="sheet-container-header">Allies</div>
 									<div class="sheet-container-body">
-										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_training_1" title="@{training_1}">
-											<span></span>
-										</div>
-										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_training_2" title="@{training_2}">
-											<span></span>
-										</div>
-										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_training_3" title="@{training_3}">
-											<span></span>
-										</div>
-										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_training_4" title="@{training_4}">
-											<span></span>
-										</div>
-										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_training_5" title="@{training_5}">
-											<span></span>
-										</div>
-										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_training_6" title="@{training_6}">
-											<span></span>
-										</div>
-										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_training_7" title="@{training_7}">
-											<span></span>
-										</div>
-										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_training_8" title="@{training_8}">
-											<span></span>
-										</div>
-										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_training_9" title="@{training_9}">
-											<span></span>
-										</div>
-										<div class="sheet-checkbox-image">
-											<input type="checkbox" name="attr_training_10" title="@{training_10}">
-											<span></span>
-										</div>
-									</div>
-								</div>
-								<div class="sheet-container-panel sheet-pc-memories">
-									<div class="sheet-container-header">Memories & Events</div>
-									<div class="sheet-container-body">
-										<fieldset class="repeating_memories">
+										<fieldset class="repeating_allies">
 											<div class="sheet-fieldset-item">
 												<div class="sheet-checkbox-cog">
 													<input type="checkbox" name="attr_options-flag" checked="checked">
@@ -2901,56 +2792,22 @@
 												<input type="checkbox" name="attr_options-flag" checked="checked" class="sheet-toggle" hidden>
 												<div class="sheet-toggle-checked">
 													<div class="sheet-form">
-														<div class="sheet-form-header">Edit Memory</div>
+														<div class="sheet-form-header">Add Ally</div>
 														<div class="sheet-form-body">
 															<div class="sheet-form-group">
 																<label>Name:</label>
-																<input type="text" name="attr_memory_name">
+																<input type="text" name="attr_ally_name">
 															</div>
 															<div class="sheet-form-group">
-																<textarea name="attr_memory_description"></textarea>
+																<textarea name="attr_ally_description"></textarea>
 															</div>
 														</div>
 													</div>
 												</div>
 												<div class="sheet-toggle-unchecked">
-													<div class="sheet-pc-memory">
-														<span name="attr_memory_name"></span>
-														<span name="attr_memory_description"></span>
-													</div>
-												</div>
-											</div>
-										</fieldset>
-									</div>
-								</div>
-								<div class="sheet-container-panel sheet-pc-notes">
-									<div class="sheet-container-header">Additional Notes</div>
-									<div class="sheet-container-body">
-										<fieldset class="repeating_notes">
-											<div class="sheet-fieldset-item">
-												<div class="sheet-checkbox-cog">
-													<input type="checkbox" name="attr_options-flag" checked="checked">
-													<span class="sheet-toggle-icon"></span>
-												</div>
-												<input type="checkbox" name="attr_options-flag" checked="checked" class="sheet-toggle" hidden>
-												<div class="sheet-toggle-checked">
-													<div class="sheet-form">
-														<div class="sheet-form-header">Edit Note</div>
-														<div class="sheet-form-body">
-															<div class="sheet-form-group">
-																<label>Name:</label>
-																<input type="text" name="attr_note_name">
-															</div>
-															<div class="sheet-form-group">
-																<textarea name="attr_note_description"></textarea>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="sheet-toggle-unchecked">
-													<div class="sheet-pc-note">
-														<span name="attr_note_name"></span>
-														<span name="attr_note_description"></span>
+													<div class="sheet-pc-ally">
+														<span name="attr_ally_name" style="font-weight:bold"></span>
+														<span name="attr_ally_description"></span>
 													</div>
 												</div>
 											</div>
@@ -3029,31 +2886,339 @@
 					</div>
 					<div class="sheet-tab sheet-tab-notes">
 						<input type="radio" name="attr_tab" value="notes">
-						<span class="sheet-tab-label">Notes</span>
+						<span class="sheet-tab-label">Guild Notebook</span>
 						<div class="sheet-tab-content">
 							<div class="sheet-container-well sheet-pc-notes">
-								<div class="sheet-container-box sheet-pc-notes-features">
-									<div class="sheet-container-header">Additional Features & Traits</div>
+								<div class="sheet-container-panel sheet-pc-xp">
+									<div class="sheet-container-header">Guild Renown</div>
 									<div class="sheet-container-body">
-										<textarea name="attr_additional_feature_and_traits"></textarea>
+										<div class="sheet-pc-guild">
+											<label>Primary</label>
+											<select name="attr_primary_guild" title="@{primary_guild}">
+												<option value=""></option>
+												<option value="azorious">Azorious</option>
+												<option value="boros">Boros</option>
+												<option value="dimir">Dimir</option>
+												<option value="golgari">Golgari</option>
+												<option value="gruul">Gruul</option>
+												<option value="izzet">Izzet</option>
+												<option value="orzhov">Orzhov</option>
+												<option value="rakdos">Rakdos</option>
+												<option value="selesnya">Selesnya</option>
+												<option value="simic">Simic</option>
+											</select>
+											<input type="text" name="attr_character_primary_renown" title="@{character_primary_renown}">
+										</div>
+										<div class="sheet-pc-guild">
+											<label>Secondary</label>
+											<select name="attr_secondary_guild" title="@{secondary_guild}">
+												<option value=""></option>
+												<option value="azorious">Azorious</option>
+												<option value="boros">Boros</option>
+												<option value="dimir">Dimir</option>
+												<option value="golgari">Golgari</option>
+												<option value="gruul">Gruul</option>
+												<option value="izzet">Izzet</option>
+												<option value="orzhov">Orzhov</option>
+												<option value="rakdos">Rakdos</option>
+												<option value="selesnya">Selesnya</option>
+												<option value="simic">Simic</option>
+											</select>
+											<input type="text" name="attr_character_secondary_renown" title="@{character_secondary_renown}">
+										</div>
+										<div class="sheet-pc-guild">
+											<label>Tertiary</label>
+											<select name="attr_tertiary_guild" title="@{tertiary_guild}">
+												<option value=""></option>
+												<option value="azorious">Azorious</option>
+												<option value="boros">Boros</option>
+												<option value="dimir">Dimir</option>
+												<option value="golgari">Golgari</option>
+												<option value="gruul">Gruul</option>
+												<option value="izzet">Izzet</option>
+												<option value="orzhov">Orzhov</option>
+												<option value="rakdos">Rakdos</option>
+												<option value="selesnya">Selesnya</option>
+												<option value="simic">Simic</option>
+											</select>
+											<input type="text" name="attr_character_tertiary_renown" title="@{character_tertiary_renown}">
+										</div>
 									</div>
 								</div>
-								<div class="sheet-container-box sheet-pc-notes-backstory">
-									<div class="sheet-container-header">Character Backstory</div>
+								<div class="sheet-container-box sheet-pc-notes-campaign">
+									<div class="sheet-container-header">Campaign Notes</div>
 									<div class="sheet-container-body">
-										<textarea name="attr_character_backstory"></textarea>
+										<textarea name="attr_campaign_notes"></textarea>
 									</div>
 								</div>
-								<div class="sheet-container-box sheet-pc-notes-allies">
-									<div class="sheet-container-header">Allies & Organisations</div>
+								<div class="sheet-container-panel sheet-pc-rank">
+									<div class="sheet-container-header">Guild Rank</div>
 									<div class="sheet-container-body">
-										<textarea name="attr_allies_and_organizations"></textarea>
+										<fieldset class="repeating_ranks">
+											<div class="sheet-fieldset-item">
+												<div class="sheet-checkbox-cog">
+													<input type="checkbox" name="attr_options-flag" checked="checked">
+													<span class="sheet-toggle-icon"></span>
+												</div>
+												<input type="checkbox" name="attr_options-flag" checked="checked" class="sheet-toggle" hidden>
+												<div class="sheet-toggle-checked">
+													<div class="sheet-form">
+														<div class="sheet-form-header">New Rank</div>
+														<div class="sheet-form-body">
+															<div class="sheet-form-group">
+																<label>Rank Title</label>
+																<input type="text" name="attr_name">
+															</div>
+															<div class="sheet-form-group">
+																<label>Guild:</label>
+																<select name="attr_source">
+																	<option value=""></option>
+																	<option value="Azorious">Azorious</option>
+																	<option value="Boros">Boros</option>
+																	<option value="Dimir">Dimir</option>
+																	<option value="Golgari">Golgari</option>
+																	<option value="Gruul">Gruul</option>
+																	<option value="Izzet">Izzet</option>
+																	<option value="Orzhov">Orzhov</option>
+																	<option value="Rakdos">Rakdos</option>
+																	<option value="Selesnya">Selesnya</option>
+																	<option value="Simic">Simic</option>
+																</select>
+															</div>
+															<div class="sheet-form-group">
+																<label>Prerequisite:</label>
+																<input type="text" name="attr_source_type">
+															</div>
+															<div class="sheet-form-group">
+																<textarea name="attr_description"></textarea>
+															</div>
+															<div class="sheet-form-group">
+																<label class="sheet-form-checkbox">
+																	<input type="checkbox" name="attr_hide_details" value="1">
+																	<span>Hide Details</span>
+																</label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sheet-toggle-unchecked">
+													<div class="sheet-pc-perks">
+														<button type="roll" name="roll_output" value="@{wtype}&{template:traits} @{charname_output} {{name=@{name}}} {{source=@{source}: @{source_type}}} {{description=@{description}}}">
+															<div class="sheet-pc-perks-name">
+																<span name="attr_name"></span>
+																<span> - </span>
+																<span name="attr_source"></span>
+															</div>
+															<input type="hidden" name="attr_hide_details" class="sheet-field-untoggle">
+															<div class="sheet-pc-perks-details">
+																<span class="sheet-pc-perks-source">
+																	<span name="attr_source_type"></span>
+																</span>
+																<span name="attr_description"></span>
+															</div>
+														</button>
+													</div>
+												</div>
+											</div>
+										</fieldset>
 									</div>
 								</div>
-								<div class="sheet-container-box sheet-pc-notes-treasure">
-									<div class="sheet-container-header">Treasure</div>
+								<div class="sheet-container-panel sheet-pc-quests">
+									<div class="sheet-container-header">Current Quests</div>
 									<div class="sheet-container-body">
-										<textarea name="attr_treasure"></textarea>
+										<fieldset class="repeating_quests">
+											<div class="sheet-fieldset-item">
+												<div class="sheet-checkbox-cog">
+													<input type="checkbox" name="attr_options-flag" checked="checked">
+													<span class="sheet-toggle-icon"></span>
+												</div>
+												<input type="checkbox" name="attr_options-flag" checked="checked" class="sheet-toggle" hidden>
+												<div class="sheet-toggle-checked">
+													<div class="sheet-form">
+														<div class="sheet-form-header">New Quest</div>
+														<div class="sheet-form-body">
+															<div class="sheet-form-group">
+																<label>Objective:</label>
+																<input type="text" name="attr_name">
+															</div>
+															<div class="sheet-form-group">
+																<label>Quest Type:</label>
+																<select name="attr_source">
+																	<option selected="selected">Main</option>
+																	<option>Guild</option>
+																	<option>Side</option>
+																	<option>Personal</option>
+																	<option>Other</option>
+																</select>
+															</div>
+															<div class="sheet-form-group">
+																<label>Quest Giver:</label>
+																<input type="text" name="attr_source_type">
+															</div>
+															<div class="sheet-form-group">
+																<textarea name="attr_description"></textarea>
+															</div>
+															<div class="sheet-form-group">
+																<label class="sheet-form-checkbox">
+																	<input type="checkbox" name="attr_hide_details" value="1">
+																	<span>Hide Details</span>
+																</label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sheet-toggle-unchecked">
+													<div class="sheet-pc-objective">
+														<button type="roll" name="roll_output" value="@{wtype}&{template:traits} @{charname_output} {{name=@{name}}} {{source=@{source}: @{source_type}}} {{description=@{description}}}">
+															<div class="sheet-pc-objective-name">
+																<span name="attr_name"></span>
+																<span> - </span>
+																<span name="attr_source_type"></span>
+															</div>
+															<input type="hidden" name="attr_hide_details" class="sheet-field-untoggle">
+															<div class="sheet-pc-objective-details">
+																<span class="sheet-pc-objective-source">
+																	<span name="attr_source"></span>
+																</span>
+																<span name="attr_description"></span>
+															</div>
+														</button>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+								<div class="sheet-container-panel sheet-pc-signets">
+									<div class="sheet-container-header">Guild Signets</div>
+									<div class="sheet-container-body">
+										<div class="sheet-container-body-header">
+											<span>Affliction</span>
+											<span>Effect</span>
+										</div>
+										<fieldset class="repeating_signets">
+											<div class="sheet-fieldset-item">
+												<div class="sheet-checkbox-cog">
+													<input type="checkbox" name="attr_options-flag" checked="checked"><span></span>
+													<span class="sheet-toggle-icon"></span>
+												</div>
+												<input type="checkbox" name="attr_options-flag" checked="checked" class="sheet-toggle" hidden>
+												<div class="sheet-toggle-checked">
+													<div class="sheet-form">
+														<div class="sheet-form-header">New Signet</div>
+														<div class="sheet-form-body">
+															<div class="sheet-form-group">
+																<select name="attr_signet">
+																	<option value="Azorious Signet">Azorious Signet</option>
+																	<option value="Boros Signet">Boros Signet</option>
+																	<option value="Dimir Signet">Dimir Signet</option>
+																	<option value="Golgari Signet">Golgari Signet</option>
+																	<option value="Gruul Signet">Gruul Signet</option>
+																	<option value="Izzet Signet">Izzet Signet</option>
+																	<option value="Orzhov Signet">Orzhov Signet</option>
+																	<option value="Rakdos Signet">Rakdos Signet</option>
+																	<option value="Selesnya Signet">Selesnya Signet</option>
+																	<option value="Simic Signet">Simic Signet</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sheet-toggle-unchecked">
+													<div class="sheet-pc-signet">
+														<span name="attr_signet" style="font-size: 10px;"></span>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+								<div class="sheet-container-panel sheet-pc-charms">
+									<div class="sheet-container-header">Guild Charms</div>
+									<div class="sheet-container-body">
+										<div class="sheet-container-body-header">
+											<span>Affliction</span>
+											<span>Effect</span>
+										</div>
+										<fieldset class="repeating_charms">
+											<div class="sheet-fieldset-item">
+												<div class="sheet-checkbox-cog">
+													<input type="checkbox" name="attr_options-flag" checked="checked"><span></span>
+													<span class="sheet-toggle-icon"></span>
+												</div>
+												<input type="checkbox" name="attr_options-flag" checked="checked" class="sheet-toggle" hidden>
+												<div class="sheet-toggle-checked">
+													<div class="sheet-form">
+														<div class="sheet-form-header">New Charms</div>
+														<div class="sheet-form-body">
+															<div class="sheet-form-group">
+																<select name="attr_charm">
+																	<option value="Azorious Charm">Azorious Charm</option>
+																	<option value="Boros Charm">Boros Charm</option>
+																	<option value="Dimir Charm">Dimir Charm</option>
+																	<option value="Golgari Charm">Golgari Charm</option>
+																	<option value="Gruul Charm">Gruul Charm</option>
+																	<option value="Izzet Charm">Izzet Charm</option>
+																	<option value="Orzhov Charm">Orzhov Charm</option>
+																	<option value="Rakdos Charm">Rakdos Charm</option>
+																	<option value="Selesnya Charm">Selesnya Charm</option>
+																	<option value="Simic Charm">Simic Charm</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sheet-toggle-unchecked">
+													<div class="sheet-pc-charm">
+														<span name="attr_charm" style="font-size: 10px;"></span>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+								<div class="sheet-container-panel sheet-pc-keyrunes">
+									<div class="sheet-container-header">Guild Keyrunes</div>
+									<div class="sheet-container-body">
+										<div class="sheet-container-body-header">
+											<span>Affliction</span>
+											<span>Effect</span>
+										</div>
+										<fieldset class="repeating_keyrunes">
+											<div class="sheet-fieldset-item">
+												<div class="sheet-checkbox-cog">
+													<input type="checkbox" name="attr_options-flag" checked="checked"><span></span>
+													<span class="sheet-toggle-icon"></span>
+												</div>
+												<input type="checkbox" name="attr_options-flag" checked="checked" class="sheet-toggle" hidden>
+												<div class="sheet-toggle-checked">
+													<div class="sheet-form">
+														<div class="sheet-form-header">New Keyrune</div>
+														<div class="sheet-form-body">
+															<div class="sheet-form-group">
+																<select name="attr_keyrune">
+																	<option value="Azorious Keyrune">Azorious Keyrune</option>
+																	<option value="Boros Keyrune">Boros Keyrune</option>
+																	<option value="Dimir Keyrune">Dimir Keyrune</option>
+																	<option value="Golgari Keyrune">Golgari Keyrune</option>
+																	<option value="Gruul Keyrune">Gruul Keyrune</option>
+																	<option value="Izzet Keyrune">Izzet Keyrune</option>
+																	<option value="Orzhov Keyrune">Orzhov Keyrune</option>
+																	<option value="Rakdos Keyrune">Rakdos Keyrune</option>
+																	<option value="Selesnya Keyrune">Selesnya Keyrune</option>
+																	<option value="Simic Keyrune">Simic Keyrune</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sheet-toggle-unchecked">
+													<div class="sheet-pc-keyrune">
+														<span name="attr_keyrune" style="font-size: 10px;"></span>
+													</div>
+												</div>
+											</div>
+										</fieldset>
 									</div>
 								</div>
 							</div>

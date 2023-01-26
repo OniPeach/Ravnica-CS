@@ -2018,6 +2018,12 @@
   .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-core .sheet-container-well-trackers .sheet-pc-training {
     grid-area: training;
     display: none; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-core .sheet-container-well-trackers .sheet-pc-charms {
+    grid-area: charms;
+    display: none; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-core .sheet-container-well-trackers .sheet-pc-keyrunes {
+    grid-area: keyrunes;
+    display: none; }
   .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-core .sheet-container-well-trackers .sheet-pc-omens {
     grid-area: omens; }
   .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-core .sheet-container-well-trackers .sheet-pc-inspiration {
@@ -2752,7 +2758,7 @@
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   grid-template-areas: "details features"
- "memories features"; }
+ "history features"; }
 .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-container-well-details {
   grid-area: details;
   display: grid;
@@ -2764,16 +2770,24 @@
  "details ideals"
  "details bonds"
  "details flaws"; }
-.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-container-well-memories {
-  grid-area: memories;
+.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-container-well-history {
+  grid-area: history;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 30px) auto;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-  grid-template-areas: "memories xp"
- "memories training"
- "memories notes"; }
+  grid-template-areas: "backstory allies"
+ "backstory allies"
+ "backstory allies"; }
+.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features textarea {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  resize: none;
+  border: 0;
+  font-size: 11px;
+  line-height: 13px; }
 .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-container-well-features {
   grid-area: features;
   display: grid;
@@ -2831,13 +2845,13 @@
     .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-column * {
       margin: 0;
       flex-shrink: 0; }
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-habit,
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-fears,
   .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-motivation,
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-feature {
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-appearance {
     height: auto; }
-    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-habit label,
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-fears label,
     .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-motivation label,
-    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-feature label {
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-appearance label {
       height: 100%; }
   .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-details .sheet-pc-detail-quest {
     height: 40px; }
@@ -2861,25 +2875,8 @@
   grid-area: bonds; }
 .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-flaws {
   grid-area: flaws; }
-.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-xp {
-  grid-area: xp; }
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-xp input {
-    width: 140px; }
-.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-training {
-  grid-area: training; }
-.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-memories {
-  grid-area: memories; }
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-memories .repitem + .repitem {
-    margin-top: 5px;
-    padding-top: 5px;
-    border-top: 1px dotted #dddddd; }
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-memories .sheet-pc-memory {
-    font-size: 11px; }
-    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-memories .sheet-pc-memory span:first-of-type {
-      font-weight: bold;
-      background: #dddddd;
-      padding: 3px 5px;
-      border-radius: 3px; }
+.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-backstory {
+  grid-area: backstory; }
 .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-personality textarea,
 .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-ideals textarea,
 .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-bonds textarea,
@@ -2931,15 +2928,15 @@
         content: "("; }
       .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-features .sheet-pc-feature .sheet-pc-feature-source::after {
         content: ")"; }
-.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-notes {
-  grid-area: notes; }
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-notes .repitem + .repitem {
+.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-allies {
+  grid-area: allies; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-allies .repitem + .repitem {
     margin-top: 5px;
     padding-top: 5px;
     border-top: 1px dotted #dddddd; }
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-notes .sheet-pc-note {
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-allies .sheet-pc-note {
     font-size: 11px; }
-    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-notes .sheet-pc-note span:first-of-type {
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-features .sheet-pc-allies .sheet-pc-note span:first-of-type {
       font-weight: bold;
       background: #dddddd;
       padding: 3px 5px;
@@ -2949,11 +2946,14 @@
 .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-notes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 3fr;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  grid-template-areas: "backstory features features"
- "allies allies treasure"; }
+  grid-template-areas: "xp signets quests"
+  "rank charms quests"
+  "rank keyrunes quests"
+  "rank campaign campaign"
+  "rank campaign campaign"; }
   .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-notes textarea {
     width: 100%;
     height: 100%;
@@ -2962,14 +2962,173 @@
     border: 0;
     font-size: 11px;
     line-height: 13px; }
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-notes .sheet-pc-notes-features {
-    grid-area: features; }
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-notes .sheet-pc-notes-backstory {
-    grid-area: backstory; }
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-notes .sheet-pc-notes-allies {
-    grid-area: allies; }
-  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-notes .sheet-pc-notes-treasure {
-    grid-area: treasure; }
+.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-container-well-quests {
+  grid-area: quests;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-areas: "quests"; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-notes .sheet-pc-notes-campaign {
+    grid-area: campaign; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp {
+    grid-area: xp; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp input {
+    width: 140px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild {
+    display: flex;
+    height: 20px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild:not(:last-of-type) {
+      margin-bottom: 3px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild * + * {
+      margin-left: 5px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild label,
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild input,
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild select {
+      font-size: 11px;
+      height: 20px;
+      padding: 0;
+      line-height: 20px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild input {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
+      padding: 0 4px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild select {
+      cursor: pointer;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild input,
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild select {
+      width: 100%;
+      min-width: 0; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild label {
+      white-space: nowrap;
+      font-size: 9px;
+      background: #dddddd;
+      border-radius: 3px;
+      width: 60px;
+      font-weight: bold;
+      display: inline-block;
+      flex-grow: 1;
+      flex-shrink: 0;
+      text-align: center; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-xp .sheet-pc-guild-column * {
+      margin: 0;
+      flex-shrink: 0; }
+.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank {
+  grid-area: rank; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank .sheet-checkbox-cog:hover span {
+    color: white;
+    opacity: 1; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank .repitem + .repitem {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px dotted #dddddd; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank .sheet-pc-perks {
+    font-size: 11px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank .sheet-pc-perks button {
+      background: none;
+      border: 0;
+      box-shadow: none;
+      width: 100%;
+      text-shadow: none; }
+      .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank .sheet-pc-perks button:hover {
+        background: #e5fffb; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank .sheet-pc-perks .sheet-pc-perks-name {
+      background: #7e2d40;
+      color: white;
+      border-radius: 3px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0 20px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank .sheet-pc-perks .sheet-pc-perks-details {
+      text-align: left;
+      white-space: normal;
+      line-height: 1.3;
+      margin-top: 5px;
+      font-size: 9px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank .sheet-pc-perks .sheet-pc-perks-source {
+      opacity: .5; }
+      .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank .sheet-pc-perks .sheet-pc-perks-source::before {
+        content: "("; }
+      .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-rank .sheet-pc-perks .sheet-pc-perks-source::after {
+        content: ")"; }
+.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests {
+  grid-area: quests; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests .sheet-checkbox-cog:hover span {
+    color: white;
+    opacity: 1; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests .repitem + .repitem {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px dotted #dddddd; }
+  .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests .sheet-pc-objective {
+    font-size: 11px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests .sheet-pc-objective button {
+      background: none;
+      border: 0;
+      box-shadow: none;
+      width: 100%;
+      text-shadow: none; }
+      .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests .sheet-pc-objective button:hover {
+        background: #e5fffb; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests .sheet-pc-objective .sheet-pc-objective-name {
+      background: #7e2d40;
+      color: white;
+      border-radius: 3px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0 20px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests .sheet-pc-objective .sheet-pc-objective-details {
+      text-align: left;
+      white-space: normal;
+      line-height: 1.3;
+      margin-top: 5px;
+      font-size: 9px; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests .sheet-pc-objective .sheet-pc-objective-source {
+      opacity: .5; }
+      .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests .sheet-pc-objective .sheet-pc-objective-source::before {
+        content: "("; }
+      .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-pc-quests .sheet-pc-objective .sheet-pc-objective-source::after {
+        content: ")"; }
+.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-container-panel .sheet-pc-signets {
+    grid-area: signets;}
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-container-panel .sheet-pc-signets .sheet-container-body-header span:first-of-type {
+      width: 75px;
+      flex-shrink: 0;
+      text-align: center; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-container-panel .sheet-pc-signets .sheet-pc-signet {
+      font-size: 11px;
+      line-height: 1.3;
+      padding: 3px 0; }
+.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-container-panel .sheet-pc-charms {
+    grid-area: charms;}
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-container-panel .sheet-pc-charms .sheet-container-body-header span:first-of-type {
+      width: 75px;
+      flex-shrink: 0;
+      text-align: center; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-container-panel .sheet-pc-charms .sheet-pc-charm {
+      font-size: 11px;
+      line-height: 1.3;
+      padding: 3px 0; }
+.charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-container-panel .sheet-pc-keyrunes {
+    grid-area: keyrunes;}
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-container-panel .sheet-pc-keyrunes .sheet-container-body-header span:first-of-type {
+      width: 75px;
+      flex-shrink: 0;
+      text-align: center; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-notes .sheet-container-panel .sheet-pc-keyrunes .sheet-pc-keyrune {
+      font-size: 11px;
+      line-height: 1.3;
+      padding: 3px 0; }
 .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-spells .sheet-pc-spell-ability .sheet-container-header,
 .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-spells .sheet-pc-burnout .sheet-container-header {
   padding-left: 10px;
@@ -3025,11 +3184,21 @@
   .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-spells .sheet-container-well-spell-attributes .sheet-pc-spell-symbols {
     font-size: 11px;
     line-height: 1.3;
+    padding-left: 20px;
+    padding-top: 6px;
     text-align: center; }
     .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-spells .sheet-container-well-spell-attributes .sheet-pc-spell-symbols ul {
       list-style: none;
       margin: 0;
       padding: 0; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-spells .sheet-container-well-spell-attributes .sheet-pc-spell-symbols .sheet-checkbox-image {
+      list-style: none;
+      margin-left: 5px;
+      padding: 0; }
+    .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-spells .sheet-container-well-spell-attributes .sheet-pc-spell-symbols .sheet-container-header {
+      list-style: none;
+      padding-right: 20px;
+      padding-bottom: 3px; }
   .charsheet .sheet-ravnica .sheet-section-pc .sheet-tab-spells .sheet-container-well-spell-attributes .sheet-pc-spell-dc .sheet-container-header {
     padding-left: 10px;
     padding-right: 10px; }
